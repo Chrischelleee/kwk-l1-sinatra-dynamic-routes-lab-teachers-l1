@@ -13,10 +13,10 @@ class App < Sinatra::Base
       end
 
       get '/say/:number/:phrase' do
-        @phrase = params[:phrase]
-        until @phrase == 3
-          puts "show me the money"
-          break
+        string = ""
+        (params[:number].to_i).times do
+          string += "#{params[:phrase]}"
         end
+        string   
       end
 end
